@@ -24,7 +24,7 @@
       - Per la produzione scrivi un file separato per ogni esercizio (`es1.py` … `es5.py`), eseguilo e verifica il risultato con gli esempi.
       - Nella lettura spiega a parole che cosa fa ogni frammento e, se stampa qualcosa, riporta anche l'output; non riscrivere il codice.
       - Sono valutati la correttezza, la gestione dei casi limite e la chiarezza del codice.
-      - Non è consentito consultare appunti, libri o Internet. E' possibile usare il *cheatsheet* Python al link #link("https://marini-didattica.github.io/misc/cheatsheet-prime/python-intro.pdf")[https://marini-didattica.github.io/misc/cheatsheet-prime/python-intro.pdf]
+      - Non è consentito consultare appunti, libri o Internet.
     ]
 
     #v(0.65cm)
@@ -64,7 +64,18 @@ Per ciascun esercizio scrivi un file separato (`es1.py` … `es5.py`), eseguilo 
   [Ogni esercizio è nel suo file `es1.py` … `es5.py`?],
 ))
 
-E' *fondamentale* che il programma funzioni per qualsiasi lista gli venga data: le soluzioni valide solo per l'esempio valgono *0 punti*.
+E' *fondamentale* che il programma funzioni per qualsiasi input gli venga dato. Gli esercizi che sono strutturati per funzionare solo su input specifici verranno valutati *0 punti*. Ad esempio, se venisse chiesto di stampare tutti i numeri contenuti in una lista, uno ad uno, allora il seguente esercizio varrebbe zero punti:
+```python
+l = [1,2,3]
+print(l[0])
+print(l[1])
+print(l[2])
+```
+
+#callout("Funzioni non consentite")[
+  - Sono vietati `sum()`, `max()`, `min()`, `sorted()`, `reversed()`, `all()`, `any()`, `list.reverse()`, `list.sort()`, `list.count()`, `list.index()`, lo slicing come `l[::-1]` o `l[::2]`, `filter()`, `map()` e le list comprehension.
+  - Sono consentiti `len()`, `append()`, `pop()`, `remove()` e i normali cicli.
+]
 
 #v(1.5em)
 
@@ -93,8 +104,6 @@ E' *fondamentale* che il programma funzioni per qualsiasi lista gli venga data: 
 #esercizio(2, [Inversione in place], 16, 2)[
   #consegna[Inverti la lista `l` *senza usare una lista ausiliaria*. Alla fine stampa `l`.]
 
-  #nota[Non usare `reverse()`, `reversed()` o `l[::-1]`: scambia l'elemento in posizione `0` con l'ultimo, poi `1` con il penultimo, e così via.]
-
   #template[
     ```python
     l = [1, 2, 3, 4, 5]
@@ -115,7 +124,7 @@ E' *fondamentale* che il programma funzioni per qualsiasi lista gli venga data: 
 #esercizio(3, [Palindroma], 16, 2)[
   #consegna[Stabilisci se la lista `l` è *palindroma*: si legge allo stesso modo da sinistra a destra e da destra a sinistra. Stampa `True` oppure `False`.]
 
-  #nota[Una lista vuota e una lista con un solo elemento sono palindrome. Confronta gli elementi agli estremi e avvicinati al centro.]
+  #nota[Una lista vuota e una lista con un solo elemento sono palindrome.]
 
   #template[
     ```python
@@ -190,14 +199,14 @@ Per ciascun frammento di codice spiega a parole che cosa fa e, se il programma s
 
 #lettura(1, [Primo frammento], 6, 2, 3)[
   ```python
-  v = [2, 4, 5, 3, 8]
-  crescente = True
+  a = [2, 4, 5, 3, 8]
+  b = True
   i = 1
-  while i < len(v):
-      if v[i] < v[i - 1]:
-          crescente = False
+  while i < len(a):
+      if a[i] < a[i - 1]:
+          b = False
       i = i + 1
-  print(crescente)
+  print(b)
   ```
 ]
 
@@ -205,13 +214,13 @@ Per ciascun frammento di codice spiega a parole che cosa fa e, se il programma s
 
 #lettura(2, [Secondo frammento], 6, 2, 3)[
   ```python
-  v = [4, 8, 6, 10]
-  somma = 0
-  for x in v:
-      somma = somma + x
-  media = somma / len(v)
-  for x in v:
-      if x > media:
+  a = [4, 8, 6, 10]
+  b = 0
+  for x in a:
+      b = b + x
+  c = b / len(a)
+  for x in a:
+      if x > c:
           print(x)
   ```
 ]
@@ -220,56 +229,46 @@ Per ciascun frammento di codice spiega a parole che cosa fa e, se il programma s
 
 #lettura(3, [Terzo frammento], 6, 1, 3)[
   ```python
-  v = [4, 9, 1, 7]
-  massimo = v[0]
-  minimo = v[0]
+  a = [4, 9, 1, 7]
+  b = a[0]
+  c = a[0]
   i = 1
-  while i < len(v):
-      if v[i] > massimo:
-          massimo = v[i]
-      if v[i] < minimo:
-          minimo = v[i]
+  while i < len(a):
+      if a[i] > b:
+          b = a[i]
+      if a[i] < c:
+          c = a[i]
       i = i + 1
-  print(massimo)
-  print(minimo)
+  print(b)
+  print(c)
   ```
 ]
 
 #v(1.5em)
 
-#lettura(4, [Quarto frammento], 6, 3, 3)[
+#lettura(4, [Quarto frammento], 6, 2, 3)[
   ```python
-  v = [3, 4, 1, 2, 3, 0]
-  best = 1
-  cur = 1
-  i = 1
-  while i < len(v):
-      if v[i] > v[i - 1]:
-          cur = cur + 1
-          if cur > best:
-              best = cur
-      else:
-          cur = 1
-      i = i + 1
-  print(best)
-  ```
-]
-
-#v(1.5em)
-
-#lettura(5, [Quinto frammento], 6, 3, 3)[
-  ```python
-  v = [1, 2, 3, 4, 5]
-  k = 6
-  count = 0
+  a = [2, 3, 4]
+  b = 1
   i = 0
-  while i < len(v):
-      j = i + 1
-      while j < len(v):
-          if v[i] + v[j] == k:
-              count = count + 1
-          j = j + 1
+  while i < len(a):
+      b = b * a[i]
       i = i + 1
-  print(count)
+  print(b)
+  ```
+]
+
+#v(1.5em)
+
+#lettura(5, [Quinto frammento], 6, 2, 3)[
+  ```python
+  a = [1, 2, 3, 4, 5, 6]
+  b = []
+  i = 0
+  while i < len(a):
+      if a[i] % 2 == 0:
+          b.append(a[i])
+      i = i + 1
+  print(b)
   ```
 ]
