@@ -73,7 +73,7 @@ print(l[2])
 ```
 
 #callout("Funzioni non consentite")[
-  - Sono vietati `sum()`, `max()`, `min()`, `sorted()`, `reversed()`, `all()`, `any()`, `list.reverse()`, `list.sort()`, `list.count()`, `list.index()`, lo slicing come `l[::-1]` o `l[::2]`, `filter()`, `map()` e le list comprehension.
+  - Sono vietati `sum()`, `max()`, `min()`, `sorted()`, `reversed()`, `all()`, `any()`, `list.reverse()`, `list.sort()`, `list.count()`, `list.index()`.
   - Sono consentiti `len()`, `append()`, `pop()`, `remove()` e i normali cicli.
 ]
 
@@ -248,11 +248,12 @@ Per ciascun frammento di codice spiega a parole che cosa fa e, se il programma s
 
 #lettura(4, [Quarto frammento], 6, 2, 3)[
   ```python
-  a = [2, 3, 4]
-  b = 1
-  i = 0
+  a = [4, 9, 1, 7]
+  b = 0
+  i = 1
   while i < len(a):
-      b = b * a[i]
+      if a[i] > a[b]:
+          b = i
       i = i + 1
   print(b)
   ```
@@ -260,15 +261,19 @@ Per ciascun frammento di codice spiega a parole che cosa fa e, se il programma s
 
 #v(1.5em)
 
-#lettura(5, [Quinto frammento], 6, 2, 3)[
+#lettura(5, [Quinto frammento], 6, 3, 3)[
   ```python
-  a = [1, 2, 3, 4, 5, 6]
-  b = []
-  i = 0
+  a = [4, 9, 1, 9]
+  b = a[0]
+  c = 1
+  i = 1
   while i < len(a):
-      if a[i] % 2 == 0:
-          b.append(a[i])
+      if a[i] > b:
+          b = a[i]
+          c = 1
+      elif a[i] == b:
+          c = c + 1
       i = i + 1
-  print(b)
+  print(c)
   ```
 ]
