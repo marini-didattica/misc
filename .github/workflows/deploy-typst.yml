@@ -41,7 +41,7 @@ jobs:
             mkdir -p "public/$folder"
 
             echo "Compiling $source"
-            typst compile "$source" "public/$folder/$filename.pdf"
+            typst compile --root . "$source" "public/$folder/$filename.pdf"
           done
 
       - uses: actions/configure-pages@v5
