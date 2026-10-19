@@ -1,0 +1,8 @@
+[submodule "typst-theme"]
+	path = typst-theme
+	url = git@github.com:marini-didattica/typst-theme.git
+	branch = main
+[submodule "typst-components"]
+	path = typst-components
+	url = git@github.com:marini-didattica/typst-components.git
+	branch = main
