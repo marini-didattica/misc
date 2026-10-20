@@ -1,7 +1,7 @@
 // Compile from the misc repository root:
 // typst compile --root . esercitazioni-seconde/esercitazione-1.typ
 #import "../typst-theme/src/lib.typ": theme
-#import "../typst-components/src/lib.typ": cover, esercizio, lettura, nota, template, esempi, callout, checklist, consegna
+#import "../typst-components/src/lib.typ": cover, quesito, nota, template, esempi, callout, checklist, consegna
 
 #set document(title: "Verifica di informatica — Simulazione 1", author: "Marini Mattia")
 #show: doc => theme(doc, footer-text: "Verifica di informatica")
@@ -79,7 +79,7 @@ print(l[2])
 
 #v(1.5em)
 
-#esercizio(1, [Posizioni alternate], 12, 1)[
+#quesito(category: "E", tag: "Esercizio", title: [Posizioni alternate], points: 12, diff: 1)[
   #consegna[Data la lista `l`, stampa gli elementi che occupano le posizioni 0, 2, 4, … separati da uno spazio. Le posizioni si contano da 0.]
 
   #nota[Con `[1, 2, 3, 4, 5]` l'output è `1 3 5`. Puoi stampare mentre scorri la lista.]
@@ -101,7 +101,7 @@ print(l[2])
 
 #v(1.5em)
 
-#esercizio(2, [Inversione in place], 16, 2)[
+#quesito(category: "E", tag: "Esercizio", title: [Inversione in place], points: 16, diff: 2)[
   #consegna[Inverti la lista `l` *senza usare una lista ausiliaria*. Alla fine stampa `l`.]
 
   #template[
@@ -121,7 +121,7 @@ print(l[2])
 
 #v(1.5em)
 
-#esercizio(3, [Palindroma], 16, 2)[
+#quesito(category: "E", tag: "Esercizio", title: [Palindroma], points: 16, diff: 2)[
   #consegna[Stabilisci se la lista `l` è *palindroma*: si legge allo stesso modo da sinistra a destra e da destra a sinistra. Stampa `True` oppure `False`.]
 
   #nota[Una lista vuota e una lista con un solo elemento sono palindrome.]
@@ -143,7 +143,7 @@ print(l[2])
 
 #v(1.5em)
 
-#esercizio(4, [Secondo più grande], 18, 3)[
+#quesito(category: "E", tag: "Esercizio", title: [Secondo più grande], points: 18, diff: 3)[
   #consegna[Trova e stampa il secondo valore più grande della lista `l`. La lista contiene almeno due valori distinti.]
 
   #nota[Se il massimo compare più volte, considera il valore distinto successivo: in `[5, 5, 3]` il secondo più grande è `3`.]
@@ -165,7 +165,7 @@ print(l[2])
 
 #v(1.5em)
 
-#esercizio(5, [Rimuovi i negativi], 18, 3)[
+#quesito(category: "E", tag: "Esercizio", title: [Rimuovi i negativi], points: 18, diff: 3)[
   #consegna[Modifica `l` rimuovendo tutti i numeri negativi. Alla fine stampa `l`. Lo zero va mantenuto.]
 
   #nota[Puoi modificare la lista originale oppure costruirne una nuova, purché alla fine `l` contenga solo i valori non negativi.]
@@ -197,7 +197,7 @@ Per ciascun frammento di codice spiega a parole che cosa fa e, se il programma s
 
 #v(1.5em)
 
-#lettura(1, [Primo frammento], 6, 2, 3)[
+#quesito(category: "S", tag: "Snippet", title: [Primo frammento], points: 6, diff: 2, righe: 3)[
   ```python
   a = [2, 4, 5, 3, 8]
   b = True
@@ -212,7 +212,7 @@ Per ciascun frammento di codice spiega a parole che cosa fa e, se il programma s
 
 #v(1.5em)
 
-#lettura(2, [Secondo frammento], 6, 2, 3)[
+#quesito(category: "S", tag: "Snippet", title: [Secondo frammento], points: 6, diff: 2, righe: 3)[
   ```python
   a = [4, 8, 6, 10]
   b = 0
@@ -227,7 +227,7 @@ Per ciascun frammento di codice spiega a parole che cosa fa e, se il programma s
 
 #v(1.5em)
 
-#lettura(3, [Terzo frammento], 6, 1, 3)[
+#quesito(category: "S", tag: "Snippet", title: [Terzo frammento], points: 6, diff: 1, righe: 3)[
   ```python
   a = [4, 9, 1, 7]
   b = a[0]
@@ -246,7 +246,7 @@ Per ciascun frammento di codice spiega a parole che cosa fa e, se il programma s
 
 #v(1.5em)
 
-#lettura(4, [Quarto frammento], 6, 2, 3)[
+#quesito(category: "S", tag: "Snippet", title: [Quarto frammento], points: 6, diff: 2, righe: 3)[
   ```python
   a = [4, 9, 1, 7]
   b = 0
@@ -261,7 +261,7 @@ Per ciascun frammento di codice spiega a parole che cosa fa e, se il programma s
 
 #v(1.5em)
 
-#lettura(5, [Quinto frammento], 6, 3, 3)[
+#quesito(category: "S", tag: "Snippet", title: [Quinto frammento], points: 6, diff: 3, righe: 3)[
   ```python
   a = [4, 9, 1, 9]
   b = a[0]

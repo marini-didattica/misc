@@ -1,7 +1,7 @@
 // Compile from the misc repository root:
 // typst compile --root . esercitazioni-prime/esercitazione-1.typ
 #import "../typst-theme/src/lib.typ": theme
-#import "../typst-components/src/lib.typ": cover, domanda, esercizio, lettura, nota, template, esempi, callout, checklist, consegna
+#import "../typst-components/src/lib.typ": cover, quesito, nota, template, esempi, callout, checklist, consegna
 
 
 #set document(title: "Verifica di informatica — Simulazione 1", author: "Marini Mattia")
@@ -61,7 +61,7 @@ Rispondi in modo breve e preciso, usando le righe sotto ogni domanda.
 
 #v(1.5em)
 
-#domanda(1, [Le componenti di un computer], 7, 6)[
+#quesito(category: "D", tag: "Domanda", title: [Le componenti di un computer], points: 7, righe: 6)[
   Descrivi brevemente quali sono le principali componenti di un personal computer e qual è lo scopo di ciascuna.
 
   #nota[Una o due frasi per componente sono sufficienti. Nomina almeno *cinque* componenti diverse.]
@@ -69,13 +69,13 @@ Rispondi in modo breve e preciso, usando le righe sotto ogni domanda.
 
 #v(1.5em)
 
-#domanda(2, [Numeri, caratteri e parole], 8, 7)[
+#quesito(category: "D", tag: "Domanda", title: [Numeri, caratteri e parole], points: 8, righe: 7)[
   Descrivi brevemente come vengono immagazzinati i numeri in un computer. Come si possono salvare caratteri e parole?
 ]
 
 #v(1.5em)
 
-#domanda(3, [Istruzioni e instruction set], 5, 5)[
+#quesito(category: "D", tag: "Domanda", title: [Istruzioni e instruction set], points: 5, righe: 5)[
   Che cos'è un'*istruzione* di un processore? Come viene rappresentata? Cosa si intende quando di parla di *instruction set*?
 
   #nota[Accenno ad *assembly* = punti extra]
@@ -106,7 +106,7 @@ print(l[2])
 
 #v(1.5em)
 
-#esercizio(1, [Conta i numeri pari], 10, 1)[
+#quesito(category: "E", tag: "Esercizio", title: [Conta i numeri pari], points: 10, diff: 1)[
   #consegna[Dato un intero `n` maggiore o uguale a `0`, conta i numeri pari fra `0` e `n`, estremi inclusi, e stampa un solo numero: il conteggio trovato.]
 
   #nota[
@@ -130,7 +130,7 @@ print(l[2])
 
 #v(1.5em)
 
-#esercizio(2, [La somma da 0 a n], 20, 2)[
+#quesito(category: "E", tag: "Esercizio", title: [La somma da 0 a n], points: 20, diff: 2)[
   #consegna[Dato un intero `n` maggiore o uguale a `0`, calcola e stampa la somma degli interi da `0` a `n`, estremi inclusi.]
 
   #nota[
@@ -154,7 +154,7 @@ print(l[2])
 
 #v(1.5em)
 
-#esercizio(3, [Tutti dentro l'intervallo], 30, 3)[
+#quesito(category: "E", tag: "Esercizio", title: [Tutti dentro l'intervallo], points: 30, diff: 3)[
   #consegna[Date la lista `l` e gli interi `a` e `b`, stampa `True` se *tutti* gli elementi di `l` sono fra `a` e `b`, estremi inclusi, altrimenti `False`. Se `l` è vuota, stampa `True`. Le variabili `l`, `a` e `b` sono già nel template.]
 
   #nota[
@@ -194,7 +194,7 @@ Per ciascun frammento di codice spiega a parole che cosa fa e, se il programma s
 
 #v(1.5em)
 
-#lettura(1, [Primo frammento], 10, 2, 3)[
+#quesito(category: "S", tag: "Snippet", title: [Primo frammento], points: 10, diff: 2, righe: 3)[
   ```python
   v = [3, 7, 1, 9]
   i = len(v) - 1
@@ -206,7 +206,7 @@ Per ciascun frammento di codice spiega a parole che cosa fa e, se il programma s
 
 #v(1.5em)
 
-#lettura(2, [Secondo frammento], 10, 2, 3)[
+#quesito(category: "S", tag: "Snippet", title: [Secondo frammento], points: 10, diff: 2, righe: 3)[
   Le variabili `a` e `b` contengono due numeri. Cosa succede ai valori delle due variabili durante l'esecuzione del programma?
   ```python
   a = 5
@@ -220,7 +220,7 @@ Per ciascun frammento di codice spiega a parole che cosa fa e, se il programma s
 
 #v(1.5em)
 
-#lettura(3, [Terzo frammento], 10, 2, 4)[
+#quesito(category: "S", tag: "Snippet", title: [Terzo frammento], points: 10, diff: 2, righe: 4)[
   ```python
   n = 10
   i = 0
