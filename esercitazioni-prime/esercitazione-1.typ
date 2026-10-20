@@ -1,7 +1,7 @@
 // Compile from the misc repository root:
 // typst compile --root . esercitazioni-prime/esercitazione-1.typ
 #import "../typst-theme/src/lib.typ": theme
-#import "../typst-components/src/lib.typ": cover, quesito, nota, template, esempi, callout, checklist, consegna
+#import "../typst-components/src/lib.typ": cover, quesito, griglia-punteggi, nota, template, esempi, callout, checklist, consegna
 
 
 #set document(title: "Verifica di informatica — Simulazione 1", author: "Marini Mattia")
@@ -230,3 +230,9 @@ Per ciascun frammento di codice spiega a parole che cosa fa e, se il programma s
       i = i + 1
   ```
 ]
+
+#pagebreak()
+
+= Riepilogo dei punteggi
+
+#griglia-punteggi()
