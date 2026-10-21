@@ -1,0 +1,31 @@
+<!doctype html>
+<html lang="it">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="robots" content="noindex, nofollow" />
+    <title>Materiale spostato — Marini didattica</title>
+  </head>
+  <body>
+    <p>Questo materiale si è spostato. Reindirizzamento in corso…</p>
+    <p>
+      <a id="fallback" href="https://marini-didattica.github.io/materiale/public/">
+        Apri il nuovo materiale
+      </a>
+    </p>
+    <script>
+      const moved = {
+        'esercitazioni-seconde/esercitazione-1.pdf':
+          'https://marini-didattica.github.io/materiale/raw/public/seconde/esercitazione-1.pdf',
+      };
+
+      const path = location.pathname.replace(/^\/misc\//, '');
+      const target =
+        moved[path] ?? 'https://marini-didattica.github.io/materiale/public/';
+      const fallback = document.getElementById('fallback');
+
+      if (fallback) fallback.href = target;
+      location.replace(target + location.search + location.hash);
+    </script>
+  </body>
+</html>

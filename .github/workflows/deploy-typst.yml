@@ -46,6 +46,9 @@ jobs:
             typst compile --root . "$source" "public/$folder/$filename.pdf"
           done
 
+          # Legacy paths that moved to the materiale repository.
+          cp 404.html public/404.html
+
       - uses: actions/configure-pages@v5
 
       - uses: actions/upload-pages-artifact@v4
