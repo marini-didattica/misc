@@ -1,6 +1,6 @@
 // Compile from the misc repository root:
 // typst compile --root . esercitazioni-prime/esercitazione-1.typ
-#import "../typst-theme/src/lib.typ": theme
+#import "../typst-components/src/lib.typ": theme
 #import "../typst-components/src/lib.typ": cover, quesito, griglia-punteggi, nota, template, esempi, callout, checklist, consegna
 
 
