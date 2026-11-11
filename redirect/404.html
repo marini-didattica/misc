@@ -1,0 +1,43 @@
+<!doctype html>
+<html lang="it">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="robots" content="noindex, nofollow" />
+    <title>Materiale spostato — Marini didattica</title>
+    <link
+      rel="canonical"
+      href="https://materiale.didattica.mattia-marini.com/public/"
+    />
+    <script>
+      (() => {
+        const BASE_PATH = "/misc";
+        const DESTINATION = "https://materiale.didattica.mattia-marini.com";
+        const moved = {
+          "/cheatsheet-prime/python-intro.pdf":
+            "/raw/public/prime/python-intro.pdf",
+          "/esercitazioni-prime/esercitazione-1.pdf":
+            "/raw/public/prime/esercitazione-1/esercitazione-1.pdf",
+          "/esercitazioni-seconde/esercitazione-1.pdf":
+            "/raw/public/seconde/esercitazione-1/esercitazione-1.pdf",
+          "/robot-intro/robot-intro.pdf": "/raw/public/prime/robot-intro.pdf",
+        };
+        const path = location.pathname.startsWith(BASE_PATH)
+          ? location.pathname.slice(BASE_PATH.length) || "/"
+          : location.pathname;
+        const targetPath = moved[path] || "/public/";
+        location.replace(
+          DESTINATION + encodeURI(targetPath) + location.search + location.hash,
+        );
+      })();
+    </script>
+  </head>
+  <body>
+    <p>
+      Questo materiale si è spostato su
+      <a href="https://materiale.didattica.mattia-marini.com/public/"
+        >materiale.didattica.mattia-marini.com</a
+      >.
+    </p>
+  </body>
+</html>
